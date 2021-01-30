@@ -21,7 +21,8 @@ export class SecondComponent implements OnInit {
   message = {}
   postData = {
     kakaoServerKey: "795b9b3c9b9883a36c6ba4d1ea86f043",
-    push_token: "fyOjTY-zSjSSGB0IgSPvFr:APA91bE0H62EsP9bDVFQX5BgQXpPBT_1o8J3pLZ2MIlnevF8T2MgPLSE2AQ-kZ7VK_ymdFbk0LW9t1QaQMSJSQqMsdVPGrFRKxBVz1QGfzYNAfPi8Igvciu6bwYgkkR9xI9MAXWNwM5a",
+    firebaseServerKey: "795b9b3c9b9883a36c6ba4d1ea86f043",
+    push_token: "eByxX8IdQK6RPSgaNtU_Pu:APA91bFR7uILyJ2CzWi1j-3B3myMsgPcDlxUb2gFYGJigVl51z5G8i_1GP_7MI1sa0qbeoyO1lgn8RpurFs1LCrEeYKxfENTj9uqxIyYqJz9vHkDO53MGLrfgTpG_Q5e2SvPax6_C4_p",
     messageTitle : "Message title",
     messageBody: "Message body"
   }
@@ -34,6 +35,13 @@ export class SecondComponent implements OnInit {
   sendMessage() {
     console.log("clicked");
     this.pushMessageService.sendMessage(this.postData).subscribe(res => {
+      console.log(res);
+    })
+  }
+
+  sendMessageToFirebase() {
+    console.log("clicked");
+    this.pushMessageService.sendMessageToFirebase(this.postData).subscribe(res => {
       console.log(res);
     })
   }

@@ -27,6 +27,16 @@ export class PushMessageService {
       )
   }
 
+  sendMessageToFirebase(message: any) {
+    console.log("sendMessageToFirebase", message);
+    return this.httpClient.post(this.apiServer + '/firebase/send-message', message, this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+
+  }
+
+
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
