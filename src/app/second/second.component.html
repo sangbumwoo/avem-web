@@ -1,22 +1,54 @@
-<div class="card bg-warning">
-  <h5 class="card-header">firebase Push notification test</h5>
+<div class="card bg-info">
+  <h5 class="card-header">firebase HTTP Push notification test</h5>
   <div class="card-body">
-      <form>
-          <div class="form-group">
-              <label for="push_token">push_token</label>
-              <input type="text" class="form-control" id="push_token" [(ngModel)]="postData.push_token" name="push_token"
-                  placeholder="">
-          </div>
-          <div class="form-group">
-              <label for="messageTitle">messageTitle</label>
-              <input type="text" class="form-control" id="messageTitle" [(ngModel)]="postData.messageTitle" name="messageTitle"
-                  placeholder="">
-          </div>
-          <div class="form-group">
-              <label for="messageBody">messageBody</label>
-              <textarea class="form-control" id="messageBody" [(ngModel)]="postData.messageBody" name="messageBody" rows="3"></textarea>
-          </div>
-          <button type="button" class="btn btn-primary" (click)="sendMessageToFirebase()">Send Message</button>
+    <form>
+      <div class="form-group">
+        <label for="firebaseServerKey">firebase Server Key</label>
+        <input type="text" class="form-control" id="firebaseServerKey" [(ngModel)]="postData.firebaseServerKey"
+          name="firebaseServerKey" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="push_token">push_token</label>
+        <input type="text" class="form-control" id="push_token" [(ngModel)]="postData.push_token" name="push_token"
+          placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageTitle">messageTitle</label>
+        <input type="text" class="form-control" id="messageTitle" [(ngModel)]="postData.messageTitle"
+          name="messageTitle" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageBody">messageBody</label>
+        <textarea class="form-control" id="messageBody" [(ngModel)]="postData.messageBody" name="messageBody"
+          rows="3"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="sendMessageToFirebaseHttp()">Send Message</button>
+    </form>
+
+  </div>
+</div>
+
+<p></p>
+<div class="card bg-warning">
+  <h5 class="card-header">firebase admin.messaging().sendToDevice() Push notification test</h5>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="push_token">push_token</label>
+        <input type="text" class="form-control" id="push_token" [(ngModel)]="postData.push_token" name="push_token"
+          placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageTitle">messageTitle</label>
+        <input type="text" class="form-control" id="messageTitle" [(ngModel)]="postData.messageTitle"
+          name="messageTitle" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageBody">messageBody</label>
+        <textarea class="form-control" id="messageBody" [(ngModel)]="postData.messageBody" name="messageBody"
+          rows="3"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="sendMessageToFirebaseAdmin()">Send Message</button>
     </form>
 
   </div>
@@ -25,30 +57,31 @@
 <p></p>
 
 <div class="card">
-    <h5 class="card-header">Kakao Push notification test</h5>
-    <div class="card-body">
-        <form>
-            <div class="form-group">
-                <label for="kakaoServerKey">Kakao Server Key</label>
-                <input type="text" class="form-control" id="kakaoServerKey" [(ngModel)]="postData.kakaoServerKey" name="kakaoServerKey"
-                    placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="push_token">push_token</label>
-                <input type="text" class="form-control" id="push_token" [(ngModel)]="postData.push_token" name="push_token"
-                    placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="messageTitle">messageTitle</label>
-                <input type="text" class="form-control" id="messageTitle" [(ngModel)]="postData.messageTitle" name="messageTitle"
-                    placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="messageBody">messageBody</label>
-                <textarea class="form-control" id="messageBody" [(ngModel)]="postData.messageBody" name="messageBody" rows="3"></textarea>
-            </div>
-            <button type="button" class="btn btn-primary" (click)="sendMessage()">Send Message</button>
-      </form>
+  <h5 class="card-header">Kakao Push notification test</h5>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="kakaoServerKey">Kakao Server Key</label>
+        <input type="text" class="form-control" id="kakaoServerKey" [(ngModel)]="postData.kakaoServerKey"
+          name="kakaoServerKey" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="push_token">push_token</label>
+        <input type="text" class="form-control" id="push_token" [(ngModel)]="postData.push_token" name="push_token"
+          placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageTitle">messageTitle</label>
+        <input type="text" class="form-control" id="messageTitle" [(ngModel)]="postData.messageTitle"
+          name="messageTitle" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="messageBody">messageBody</label>
+        <textarea class="form-control" id="messageBody" [(ngModel)]="postData.messageBody" name="messageBody"
+          rows="3"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="sendMessage()">Send Message</button>
+    </form>
 
-    </div>
+  </div>
 </div>
