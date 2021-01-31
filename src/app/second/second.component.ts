@@ -32,24 +32,14 @@ export class SecondComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendMessage() {
-    console.log("clicked");
-    this.pushMessageService.sendMessage(this.postData).subscribe(res => {
+  sendMessageToKakao() {
+    this.pushMessageService.sendMessageKakao(this.postData).subscribe(res => {
       console.log(res);
     })
   }
 
-  sendMessageToFirebaseAdmin() {
-    console.log("clicked");
+  sendMessageToFirebase() {
     this.pushMessageService.sendMessageToFirebase(this.postData).subscribe(res => {
-      console.log(res);
-    })
-  }
-
-  sendMessageToFirebaseHttp() {
-    console.log("clicked");
-
-    this.pushMessageService.sendMessageToFirebaseHttp(this.postData).subscribe(res => {
       console.log(res);
     })
   }
